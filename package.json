@@ -1,0 +1,30 @@
+{
+  "name": "activo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "webpack && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srihithanarra/activo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srihithanarra/activo/issues"
+  },
+  "homepage": "https://github.com/srihithanarra/activo#readme",
+  "dependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "express": "^4.15.3",
+    "html-webpack-plugin": "^2.30.1"
+  },
+  "devDependencies": {
+    "file-loader": "^0.11.2",
+    "webpack": "^3.4.1"
+  }
+}
