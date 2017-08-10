@@ -6,21 +6,6 @@ var express = require("express");
 var PORT = 3000;
 var app = express();
 var DIST_PATH = path.join(__dirname, "dist");
-import connection from "./mongoDb";
-
-
-
-var findRestaurants = function(db, callback) {
-    var cursor =db.collection('restaurants').find({"name": "Birdbath Spring"} );
-    cursor.each(function(err, doc) {
-        assert.equal(err, null);
-        if (doc != null) {
-            console.dir(doc);
-        } else {
-            callback();
-        }
-    });
-};
 
 
 
@@ -29,8 +14,7 @@ app.listen(PORT);
 
 //Sample home route
 app.get("/events", function (req, res) {
-    res.send(connect);
-  /*res.json({
+  res.json({
       events: [
       {
           'day' : 1,
@@ -44,5 +28,5 @@ app.get("/events", function (req, res) {
          'start_time' : '4:00PM',
          'end_time' : '5:00PM',
      },
-  ]});*/
+  ]});
 })
