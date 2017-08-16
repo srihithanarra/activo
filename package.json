@@ -19,10 +19,14 @@
   },
   "homepage": "https://github.com/srihithanarra/activo#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "clean-webpack-plugin": "^0.1.16",
     "express": "^4.15.3",
     "html-webpack-plugin": "^2.30.1",
-    "mongodb": "^2.2.30"
+    "jsonwebtoken": "^7.4.2",
+    "mongodb": "^2.2.30",
+    "mongoose": "^4.11.6",
+    "morgan": "^1.8.2"
   },
   "devDependencies": {
     "webpack": "^3.4.1"
