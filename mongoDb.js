@@ -11,6 +11,8 @@ var connection = MongoClient.connect(mongoUrl, function(err, db) {
     });
 });
 
+module.exports = mongoUrl;
+
 /*var connection = MongoClient.connect(mongoUrl, function(err, db) {
  assert.equal(null, err);
  findRestaurants(db, function () {
