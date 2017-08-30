@@ -6,7 +6,7 @@ router.get('/', (req, res)=>{
 });
 
 router.get('/event/new', (req, res)=>{
-    res.render('')
+    res.render('eventCreateEdit')
 });
 
 
