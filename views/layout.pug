@@ -1,12 +1,12 @@
 doctype html
 html
 	head
-		title Home | Activo
-		link(rel="stylesheet", type="text/css" href="css/bootstrap.min.css")
-		link(rel="stylesheet", type="text/css" href="css/animation.css")
-		link(rel="stylesheet", type="text/css" href="css/font-awesome.min.css")
-		link(rel="stylesheet", type="text/css" href="css/main.css")
-		link(rel="stylesheet", type="text/css" href="css/responsive.css")
+		title Home | #{siteName}
+		link(rel="stylesheet", type="text/css" href="/css/bootstrap.min.css")
+		link(rel="stylesheet", type="text/css" href="/css/animate.css")
+		link(rel="stylesheet", type="text/css" href="/css/font-awesome.min.css")
+		link(rel="stylesheet", type="text/css" href="/css/main.css")
+		link(rel="stylesheet", type="text/css" href="/css/responsive.css")
 	body
 		div.header(id='header')
 			block header
@@ -30,22 +30,13 @@ html
 										span.icon-bar
 										span.icon-bar
 									a.navbar-brand(href="index.html")
-										img.img-responsive(src="images/logo.png",alt="logo")
+										img.img-responsive(src="/images/logo.png",alt="logo")
 
 								div.collapse.navbar-collapse
 									ul.nav.navbar-nav.navbar-right
-										li.scroll.active
-											a(href="#home")  Home
-										li.scroll
-											a(href="#explore") Explore
-										li.scroll
-											a(href="#event") Event
-										li.scroll
-											a(href="#about") About
-										li.no-scroll
-											a(href="#twitter") Twitter
-										li.scroll
-											a(href="#contact") Contact
+										each item in menu
+											li.scroll
+												a(href=item.slug) #{item.title}
 		div.content
 			block content
 		div.footer
