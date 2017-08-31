@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run watch",
     "dev": "webpack && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon server.js --exec babel-node --presets es2015"
   },
   "repository": {
     "type": "git",
@@ -19,11 +20,24 @@
   },
   "homepage": "https://github.com/srihithanarra/activo#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "clean-webpack-plugin": "^0.1.16",
-    "express": "^4.15.3",
-    "html-webpack-plugin": "^2.30.1"
+    "es6-promisify": "^5.0.0",
+    "express": "^4.15.4",
+    "html-webpack-plugin": "^2.30.1",
+    "jsonwebtoken": "^7.4.3",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.10.8",
+    "morgan": "^1.8.2",
+    "promise": "^8.0.1",
+    "pug": "^2.0.0-rc.3"
   },
   "devDependencies": {
-    "webpack": "^3.4.1"
+    "nodemon": "^1.11.0",
+    "webpack": "^3.5.5",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
   }
 }
