@@ -1,10 +1,11 @@
 extends layout
 
 block content
-    form.event.event-create
-        input.title(type='text', placeholder='Event Title')
-        input.date(type='text',placeholder='When')
-        input.from-time(type='text',placeholder='From')
-        input.to-time(type='text',placeholder='To')
-        input.where(type='text',placeholder='Where')
-        input.submit(type='submit',value='Create')
+    div.container
+    form.row.event.event-create(method="POST", action="/event/new")
+        input.title.col-xs-6(type='text', placeholder='Event Title', name="title")
+        input.date.col-xs-6(type='text',placeholder='When',name="when")
+        input.from-time.col-xs-6(type='text',placeholder='From',name="from")
+        input.to-time.col-xs-6(type='text',placeholder='To',name="to")
+        input.where.col-xs-12(type='text',placeholder='Where',name="where")
+        input.submit.btn.btn-default(type='submit',value='Create')

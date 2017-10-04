@@ -8,7 +8,7 @@ html
 		link(rel="stylesheet", type="text/css" href="/css/main.css")
 		link(rel="stylesheet", type="text/css" href="/css/responsive.css")
 	body
-		div.header(id='header')
+		header#header(role="banner")
 			block header
 				div.main-nav
 					div.container
@@ -37,7 +37,27 @@ html
 										each item in menu
 											li.scroll
 												a(href=item.slug) #{item.title}
-		div.content
+		section#home
+			div#main-slider.carousel.slide(data-ride="carousel")
+				ol.carousel-indicators
+					li.active(data-target="#main-slider", data-slide-to="0")
+					li(data-target="#main-slider", data-slide-to="1")
+					li(data-target="#main-slider", data-slide-to="2")
+				div.carousel-inner
+					div.item.active
+						img.img-responsive(src="/images/slider/bg1.jpg", alt="slider")
+						div.carousel-caption
+							h2 register for our next event
+					div.item
+						img.img-responsive(src="/images/slider/bg2.jpg", alt="slider")
+						div.carousel-caption
+							h2 register for our next event
+					div.item
+						img.img-responsive(src="/images/slider/bg3.jpg", alt="slider")
+						div.carousel-caption
+							h2 register for our next event
+		<!--/#home-->
+		section#content
 			block content
 		div.footer
 			block footer

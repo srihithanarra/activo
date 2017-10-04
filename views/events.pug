@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    ul.list-group
+    each event in events
+      li.list-group-item
+        h3 #{event.title}
+        | #{event.from}
+        | #{event.to}
+        span.label.label-default #{event.when}

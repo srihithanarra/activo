@@ -1,4 +1,58 @@
 extends layout
 
 block content
-    p Hello!! Welcome to event manager. You can checkout up-coming events here. Have fun!!
+    section#explore
+        div.container
+            div.row
+                div.watch
+                    img.img-responsive(src="/images/watch.png", alt="")
+                div.col-md-4.col-md-offset-2.col-sm-5
+                    h2 our next event in
+                div.col-sm-7.col-md-6
+                    ul#countdown
+                        li
+                            span.days.time-font 00
+                            p days
+                        li
+                            span.hours.time-font 00
+                            p hours
+                        li
+                            span.minutes.time-font 00
+                            p minutes
+                        li
+                            span.seconds.time-font 00
+                            p seconds
+    <!--/#explore-->
+    section#event
+        div.container
+            div.row
+                div.col-sm-12.col-md-9
+                    div#event-carousel.carousel.slide(data-interval="false")
+                        h2 UPCOMING EVENTS
+                        a.even-control-left(href="#event-carousel", data-slide="prev")
+                            i.fa.fa-angle-left
+                        a.even-control-right(href="#event-carousel", data-slide="next")
+                            i.fa.fa-angle-right
+                        div.carousel-inner
+                            div.item.active
+                                div.row
+                                each event in events
+                                    div.col-sm-4
+                                        div.single-event
+                                            img.img-responsive(src="images/event/event1.jpg", alt="event-image")
+                                            h4 #{event.title}
+                                            h5 Vocal
+                            div.item
+                                div.row
+                                each event in events
+                                    div.col-sm-4
+                                        div.single-event
+                                            img.img-responsive(src="images/event/event1.jpg", alt="event-image")
+                                            h4 #{event.title}
+                                            h5 Vocal
+
+                div.guitar
+                    img.img-responsive(src="images/guitar.png", alt="guitar")
+
+    <!--/#event-->
+
