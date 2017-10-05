@@ -25,9 +25,9 @@ app.use(express.static(CSS_PATH));
 //connect to database
 mongoose.Promise = global.Promise;
 mongoose.connect(config.database)
-    .then(function(){console.log("Connection successful")})
+    .then(function(){console.log("MongoDB Connection successful")})
     .catch(function () {
-  console.log('connection failed');
+  console.log('MongoDB connection failed');
 });
 
 
