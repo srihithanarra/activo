@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    div.container
+    form.row.event.event-create(method="POST", action="/event/new",role="form")
+        div.col-sm-5.col-sm-offset-2
+            div.form-group
+                label(for="title") Title
+                input.form-control.title.col-xs-6(type='text', placeholder='Event Title', name="title")
+            div.form-group
+                label(for="title") Date
+                input.form-control.date(type='date',placeholder='When',name="when")
+            div.form-group
+                label(for="title") From
+                input.form-control.from-time(type='time',placeholder='From',name="from")
+            div.form-group
+                label(for="title") To
+                input.form-control.to-time(type='time',placeholder='To',name="to")
+            div.form-group
+                label(for="title") Where
+                input.form-control.where(type='text',placeholder='Where',name="where")
+            input.submit.btn.btn-primary.pull-right(type='submit',value='Create')

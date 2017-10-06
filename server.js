@@ -11,6 +11,7 @@ var mongoose = require("mongoose");
 var jwt = require("jsonwebtoken");
 var config = require("./config");
 var routes = require("./routes/index");
+var menu = require("./menu");
 /**************************
  *** CONFIGURATION ********
  **************************/
@@ -18,16 +19,15 @@ var routes = require("./routes/index");
 var PORT = 3000;
 var DIST_PATH = path.join(__dirname, "dist");
 var CSS_PATH = path.join(__dirname, "css");
-console.log(CSS_PATH);
 
 app.use(express.static(CSS_PATH));
 
 //connect to database
 mongoose.Promise = global.Promise;
 mongoose.connect(config.database)
-    .then(function(){console.log("Connection successful")})
+    .then(function(){console.log("MongoDB Connection successful")})
     .catch(function () {
-  console.log('connection failed');
+  console.log('MongoDB connection failed');
 });
 
 
@@ -41,6 +41,18 @@ app.set('view engine', 'pug');
 
 //use routes
 app.use('/', routes);
+
+
+app.locals.siteName = 'Events';
+app.locals.menu = menu;//TODO: check why res.locals was not working
+
+
+//include css
+app.use('/css', express.static(path.join(__dirname, 'css')));
+//include fonts
+app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
+//include images
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 
 app.listen(PORT);

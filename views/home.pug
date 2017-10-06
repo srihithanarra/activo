@@ -1,4 +1,100 @@
 extends layout
 
 block content
-    p Hello!! Welcome to event manager. You can checkout up-coming events here. Have fun!!
+    section#explore
+        div.container
+            div.row
+                div.watch
+                    img.img-responsive(src="/images/watch.png", alt="")
+                div.col-md-4.col-md-offset-2.col-sm-5
+                    h2 our next event in
+                div.col-sm-7.col-md-6
+                    ul#countdown
+                        li
+                            span.days.time-font #{next.days()}
+                            p days
+                        li
+                            span.hours.time-font #{next.hours()}
+                            p hours
+                        li
+                            span.minutes.time-font #{next.minutes()}
+                            p minutes
+                        li
+                            span.seconds.time-font #{next.seconds()}
+                            p seconds
+    <!--/#explore-->
+    section#event
+        div.container
+            div.row
+                div.col-sm-12.col-md-9
+                    div#event-carousel.carousel.slide(data-interval="false")
+                        h2 UPCOMING EVENTS
+                        a.even-control-left(href="#event-carousel", data-slide="prev")
+                            i.fa.fa-angle-left
+                        a.even-control-right(href="#event-carousel", data-slide="next")
+                            i.fa.fa-angle-right
+                        div.carousel-inner
+                            div.item.active
+                                div.row
+                                each event in events
+                                    div.col-sm-4
+                                        div.single-event
+                                            img.img-responsive(src="images/event/event1.jpg", alt="event-image")
+                                            h4 #{event.title}
+                                            h5 #{event.from.toDateString()}
+                            div.item
+                                div.row
+                                each event in events
+                                    div.col-sm-4
+                                        div.single-event
+                                            img.img-responsive(src="images/event/event1.jpg", alt="event-image")
+                                            h4 #{event.title}
+                                            h5 Vocal
+
+                div.guitar
+                    img.img-responsive(src="images/guitar.png", alt="guitar")
+
+    <!--/#event-->
+
+    section#contact
+        div#map
+            div#gmap-wrap
+                div#gmap
+        <!--/#map-->
+        div.contact-section
+            div.ear-piece
+                img.img-responsive(src="images/ear-piece.png", alt="")
+            div.container
+                div.row
+                    div.col-sm-3.col-sm-offset-4
+                        div.contact-text
+                            h3 Contact
+                            address
+                                | E-mail: promo@party.com
+                                | Phone: +1 (123) 456 7890
+                                | Fax: +1 (123) 456 7891
+                            div.contact-address
+                                h3 Contact
+                                address
+                                    | Unit C2, St.Vincent's Trading Est.,
+                                    | Feeder Road,
+                                    | Bristol, BS2 0UY
+                                    | United Kingdom
+                    div.col-sm-5
+                        div#contact-section
+                            h3 Send a message
+                            div.status.alert.alert-success(style="display: none")
+                            div#main-contact-form.contact-form(name="contact-form",method="post")
+                                div.form-group
+                                    input.form-control(type="text",name="name",required="required",placeholder="Name")
+                                div.form-group
+                                    input.form-control(type="email",name="email",required="required",placeholder="Email")
+                                div.form-group
+                                    textarea#message.form-control(rows="4",name="message",required="required",placeholder="Enter your message")
+                                div.form-group
+                                    button.btn.btn-primary.pull-right(type="submit") Send
+        <!--/#Contact-->
+
+
+
+
