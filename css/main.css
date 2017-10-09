@@ -310,25 +310,25 @@ h2 {
   border-bottom: 1px solid #9e3e2e;
 }
 
-#countdown li .days {
+#countdown li #days {
   background-color: #45b29d;
   border-top: 1px solid #6ac1b1;
   border-left: 1px solid #6ac1b1;
 }
 
-#countdown li .hours {
+#countdown li #hours {
   background-color: #efc94c; 
   border-top: 1px solid #f2d470;
   border-left: 1px solid #f2d470;
 }
 
-#countdown li .minutes {
+#countdown li #minutes {
   background-color: #e27a3f;
   border-top: 1px solid #e89565;
   border-left: 1px solid #e89565;
 }
 
-#countdown li .seconds {
+#countdown li #seconds {
   background-color: #df5a49;
   border-top: 1px solid #e57b6d;
   border-left: 1px solid #e57b6d;

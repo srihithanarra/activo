@@ -11,16 +11,16 @@ block content
                 div.col-sm-7.col-md-6
                     ul#countdown
                         li
-                            span.days.time-font #{next.days()}
+                            span#days.time-font #{next.days()}
                             p days
                         li
-                            span.hours.time-font #{next.hours()}
+                            span#hours.time-font #{next.hours()}
                             p hours
                         li
-                            span.minutes.time-font #{next.minutes()}
+                            span#minutes.time-font #{next.minutes()}
                             p minutes
                         li
-                            span.seconds.time-font #{next.seconds()}
+                            span#seconds.time-font #{next.seconds()}
                             p seconds
     <!--/#explore-->
     section#event
@@ -96,5 +96,22 @@ block content
         <!--/#Contact-->
 
 
-
+    script(type="text/javascript").
+        if (#{next}) {
+            var futureDate = Date.now() + #{next};
+            var days = document.getElementById('days');
+            var hours = document.getElementById('hours');
+            var minutes = document.getElementById('minutes');
+            var seconds = document.getElementById('seconds');
+            var recFun = setInterval(function(){
+                var distance = futureDate - Date.now();
+                days.innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+                hours.innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                minutes.innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                seconds.innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+                if (distance < 0) {
+                    clearInterval(recFun);
+                }
+            }, 1000);
+        }
 
